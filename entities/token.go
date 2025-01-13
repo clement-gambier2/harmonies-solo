@@ -32,7 +32,7 @@ func (t Token) Print() string {
 	}
 	colorCode, exists := colorMap[t.Color]
 	if exists {
-		return fmt.Sprintf("%s%s\033[0m", colorCode, t.Color)
+		return fmt.Sprintf("%s%s\033[0m", colorCode, "*")
 	} else {
 		return fmt.Sprintf("%s", t.Color)
 	}
