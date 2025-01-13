@@ -1,6 +1,8 @@
 package entities
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Board struct {
 	Column1 [5]Tile
@@ -10,19 +12,22 @@ type Board struct {
 	Column5 [5]Tile
 }
 
-type Tile struct {
-	Stack [3]Token
-}
-
 func (b *Board) New() *Board {
 	return &Board{}
 }
 
 func (b *Board) PlaceAToken(t Token, nbColumn int, nbTile int) {
-	//if nbColumn == 0 {
-	//	b.Column1[nbTile].Stack[0] = t
-	//}
-	b.Column1[nbTile].Stack[0] = t
+	if nbColumn == 0 {
+		b.Column1[nbTile].Place(t)
+	} else if nbColumn == 1 {
+		b.Column2[nbTile].Place(t)
+	} else if nbColumn == 2 {
+		b.Column3[nbTile].Place(t)
+	} else if nbColumn == 3 {
+		b.Column4[nbTile].Place(t)
+	} else {
+		b.Column5[nbTile].Place(t)
+	}
 }
 
 func (b *Board) Print() {

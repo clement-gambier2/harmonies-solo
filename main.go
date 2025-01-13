@@ -19,7 +19,11 @@ func main() {
 	game.TokenBoard.Print()
 	fmt.Println(len(game.Pouch.Token))
 
+	stackChoosen := game.TokenBoard.Stack2
+
 	//place a token
-	game.Board.PlaceAToken(entities.Token{Color: "Blue"}, 0, 0)
+	game.Board.PlaceAToken(stackChoosen[0], 0, 0)
+	game.Board.PlaceAToken(stackChoosen[1], 0, 1)
+	game.Board.PlaceAToken(stackChoosen[2], 3, 2)
 	game.Board.Print()
 }
