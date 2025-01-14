@@ -2,6 +2,6 @@ package entities
 
 type Game struct {
 	Pouch      *Pouch
-	Board      *Board
+	Board      Board
 	TokenBoard TokenBoard
 }

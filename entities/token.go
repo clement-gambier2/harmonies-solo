@@ -34,6 +34,6 @@ func (t Token) Print() string {
 	if exists {
 		return fmt.Sprintf("%s%s\033[0m", colorCode, "*")
 	} else {
-		return fmt.Sprintf("%s", t.Color)
+		return fmt.Sprintf("%s", "o")
 	}
 }
